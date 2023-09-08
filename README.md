@@ -10,8 +10,7 @@ docker compose up
 
 This is run all microservices running in different ports virtulized to the landing page's port(5050)
 
-
-Apart from the four basic arithmetic services (addition, substraction , multiplication and division) , the three other services that are added are equals,exponent and modulus
+This is basically currency conversion from INR to different currency
 
 
 
