@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Currency Conversion Microservices</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #9dc08b;
+      background-image: url("3.png");
+      background-repeat: 2;
+    }
+
+    .title1 {
+      width: 400px;
+      height: 33px;
+      margin: 0 auto;
+      background-color: #557c55;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+
+      font-size: xx-large;
+      font-family: monospace;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      font-family: monospace;
+      font-size: 50;
+    }
+
+    form {
+      width: 400px;
+      margin: 0 auto;
+      background-color: #edf1d6;
+      padding: 30px;
+      box-shadow: 0px 0px 10px #888;
+
+      border-radius: 5px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #609966;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #609966;
+    }
+
+    .flash-message {
+      width: 400px;
+      margin: 0 auto;
+      background-color: #557c55;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="title1">Currency Conversion</div>
+  <h1></h1>
+  <form action="" method="POST">
+    <label for="first">Currency in Rupees:</label>
+    <input type="number" id="first" name="first" placeholder="0" step="any" />
+    <label for="operation">Convert to</label>
+    <select id="operation" name="operation">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="JPY">JPY</option>
+      <option value="CAD">CAD</option>
+      <option value="AUD">AUD</option>
+      <option value="CHF">CHF</option>
+    </select>
+    <br />
+    <input type="submit" name="submit_button" value="Convert" />
+  </form>
+  {% for message in get_flashed_messages() %}
+  <div class="flash-message">{{ message }}</div>
+  {% endfor %}
+</body>
+
+</html>
